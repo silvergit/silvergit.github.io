@@ -1,5 +1,5 @@
 # Change baseurl before deploy
-baseurl = "https://github.com/silvergit/silvergit.github.io"
+baseurl = "https://github.com/silvergit"
 languageCode = "en-us"
 title = "Hugo Theme Stack Starter"
 
