@@ -1,0 +1,105 @@
+toggleMenu:
+    other: منو
+
+darkMode:
+    other: حالت شب
+
+list:
+    page:
+        one: "{{ .Count }} صفحه"
+        other: "{{ .Count }} صفحه"
+
+    section:
+        other: بخش
+
+    subsection:
+        one: زیربخش
+        other: زیربخش
+
+article:
+    back:
+        other: قبلی
+
+    tableOfContents:
+        other: فهرست
+
+    relatedContent:
+        other: مطالب مرتبط
+
+    lastUpdatedOn:
+        other: آخرین بروزرسانی در
+
+    readingTime:
+        one: "مطالعه در {{ .Count }} دقیقه"
+        other: "مطالعه در {{ .Count }} دقیقه"
+
+notFound:
+    title:
+        other: یافت نشد
+
+    subtitle:
+        other: این صحه وجود ندارد
+
+widget:
+    archives:
+        title:
+            other: آرشیو
+
+        more:
+            other: بیشتر
+
+    tagCloud:
+        title:
+            other: تگ ها
+    categoriesCloud:
+        title:
+            other: دسته بندی
+
+search:
+    title:
+        other: جستجو
+
+    placeholder:
+        other: تایپ کنید ...
+
+    resultTitle:
+        other: "#PAGES_COUNT صفحه (#TIME_SECONDS ثانیه)"
+
+footer:
+    builtWith:
+        other: قدرت گرفته از {{ .Generator }}
+
+    designedBy:
+        other: قالب {{ .Theme }} ساخته شده توسط {{ .DesignedBy }}
+
+# ========== بخش‌های جدید برای سایدبار ==========
+home:
+    other: "خانه"
+
+archive:
+    other: "بایگانی"
+
+categories:
+    other: "دسته‌بندی‌ها"
+
+tag_cloud:  # توجه: underline نه dash
+    other: "ابر برچسب"
+
+# ========== سایر کلیدهای مفید ==========
+sidebar:
+    other: "نوار کناری"
+
+recent:
+    other: "مطالب اخیر"
+
+posts:
+    other: "نوشته‌ها"
+
+pages:
+    other: "صفحات"
+
+tags:
+    other: "برچسب‌ها"
+
+all:
+    other: "همه"

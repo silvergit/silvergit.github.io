@@ -1,5 +1,5 @@
 ---
-title: "Archives"
+title: "بایگانی"
 date: 2022-03-06
 layout: "archives"
 slug: "archives"
