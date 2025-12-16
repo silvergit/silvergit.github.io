@@ -21,3 +21,99 @@
     font-weight: 700;
     line-height: 1.4;
 }
+
+/* اصلاح راست‌چینی کدها در صفحات فارسی */
+:lang(fa) {
+    /* برای بلوک‌های کد */
+    pre, code, .highlight, .chroma {
+        direction: ltr !important;
+        text-align: left !important;
+        unicode-bidi: embed !important;
+    }
+    
+    /* برای inline code */
+    :not(pre) > code {
+        direction: ltr !important;
+        unicode-bidi: embed !important;
+    }
+    
+    /* برای کدهای داخل جدول (اگر قالب از line numbers استفاده می‌کند) */
+    .highlight table {
+        direction: ltr !important;
+    }
+    
+    /* برای اعداد در کدها */
+    .highlight .ln, .line-numbers {
+        direction: ltr !important;
+        text-align: right !important; /* شماره خطوط سمت راست */
+        padding-right: 1em !important;
+        padding-left: 0 !important;
+    }
+}
+
+/* تعریف متغیرهای رنگ برای shortcode ها */
+:root {
+    --color-blue: #3b82f6;
+    --color-green: #10b981;
+    --color-orange: #f59e0b;
+    --color-red: #ef4444;
+    --color-purple: #8b5cf6;
+    --color-pink: #ec4899;
+    --color-gray: #6b7280;
+}
+
+/* استایل shortcode هشدار */
+.alert {
+    border-left: 4px solid;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.alert-blue {
+    border-color: var(--color-blue);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.alert-green {
+    border-color: var(--color-green);
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.alert-orange {
+    border-color: var(--color-orange);
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.alert-red {
+    border-color: var(--color-red);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.alert-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.alert-content {
+    line-height: 1.6;
+}
+
+
+/* استایل برای بلوک کد با نام فایل */
+pre[data-filename]::before {
+    content: attr(data-filename);
+    display: block;
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 0.75rem 1rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #4a5568;
+    border-radius: 8px 8px 0 0;
+}

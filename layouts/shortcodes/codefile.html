@@ -1,0 +1,133 @@
+{{- $language := .Get "lang" | default (.Get "language") | default "" -}}
+{{- $filename := .Get "file" | default "" -}}
+{{- $linenos := .Get "linenos" | default "false" -}}
+{{- $hl_lines := .Get "hl" | default "" -}}
+{{- $copyable := .Get "copy" | default "true" -}}
+
+{{- $options := "" -}}
+{{- if eq $linenos "true" -}}
+    {{- $options = printf "%s,linenos=table" $options -}}
+{{- end -}}
+{{- if $hl_lines -}}
+    {{- $options = printf "%s,hl_lines=%s" $options $hl_lines -}}
+{{- end -}}
+{{- $options = trim $options "," -}}
+
+<div class="code-container" dir="ltr">
+    {{- if $filename -}}
+    <div class="code-header">
+        <div class="file-info">
+            <svg class="file-icon" viewBox="0 0 24 24">
+                <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                <polyline points="13 2 13 9 20 9"></polyline>
+            </svg>
+            <span class="filename">{{ $filename }}</span>
+            {{- if $language -}}
+            <span class="language-badge">{{ $language }}</span>
+            {{- end -}}
+        </div>
+        
+        {{- if eq $copyable "true" -}}
+        <button class="copy-button" onclick="copyCode(this)">
+            <svg class="copy-icon" viewBox="0 0 24 24">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            copy
+        </button>
+        {{- end -}}
+    </div>
+    {{- end -}}
+    
+    <div class="code-content">
+        {{- if $options -}}
+            {{ highlight (trim .Inner "\n") $language $options }}
+        {{- else -}}
+            {{ highlight (trim .Inner "\n") $language }}
+        {{- end -}}
+    </div>
+</div>
+
+{{- if eq $copyable "true" -}}
+<script>
+function copyCode(button) {
+    const codeContent = button.closest('.code-container').querySelector('pre code');
+    const text = codeContent.textContent;
+    
+    navigator.clipboard.writeText(text).then(() => {
+        const originalText = button.innerHTML;
+        button.innerHTML = '<svg class="copy-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>کپی شد!';
+        button.style.background = '#10b981';
+        
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.style.background = '';
+        }, 2000);
+    });
+}
+</script>
+<style>
+.code-container {
+    margin: 2rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.code-header {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #334155;
+}
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+.file-icon {
+    width: 18px;
+    height: 18px;
+    fill: #94a3b8;
+}
+.filename {
+    font-weight: 500;
+}
+.language-badge {
+    background: #475569;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+.copy-button {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: background 0.2s;
+}
+.copy-button:hover {
+    background: #2563eb;
+}
+.copy-icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+.code-content pre {
+    margin: 0;
+    border-radius: 0 0 10px 10px;
+}
+</style>
+{{- end -}}

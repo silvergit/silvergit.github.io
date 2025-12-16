@@ -1,0 +1,25 @@
+{{- $type := .Get "type" | default "info" -}}
+{{- $icon := .Get "icon" | default "info-circle" -}}
+{{- $title := .Get "title" | default (title $type) -}}
+
+{{- $typeMap := dict 
+    "info" "blue"
+    "note" "blue"
+    "tip" "green"
+    "success" "green"
+    "warning" "orange"
+    "danger" "red"
+    "error" "red"
+-}}
+
+{{- $color := index $typeMap $type | default "blue" -}}
+
+<div class="alert alert-{{ $color }}">
+    <div class="alert-header" style="color: var(--color-{{ $color }});">
+        <i class="ti ti-{{ $icon }}"></i>
+        <span>{{ $title }}</span>
+    </div>
+    <div class="alert-content">
+        {{ .Inner | markdownify }}
+    </div>
+</div>
