@@ -77,14 +77,14 @@ enabled = true
 ## Comments
 [comments]
 enabled = true
-provider = "disqus"
+provider = "giscus"
 
-[comments.disqusjs]
-shortname = ""
-apiUrl = ""
-apiKey = ""
-admin = ""
-adminLabel = ""
+#[comments.disqusjs]
+#shortname = ""
+#apiUrl = ""
+#apiKey = ""
+#admin = ""
+#adminLabel = ""
 
 [comments.utterances]
 repo = ""
@@ -128,15 +128,15 @@ serverName = "cactus.chat"
 siteName = ""
 
 [comments.giscus]
-repo = ""
-repoID = ""
-category = ""
-categoryID = ""
-mapping = ""
-lightTheme = ""
-darkTheme = ""
-reactionsEnabled = 1
-emitMetadata = 0
+repo = "silvergit/silvergit.github.io"
+repoID = "R_kgDOQnHzbg"
+category = "Announcements"  # یا "Comments" یا "General"
+categoryID = "DIC_kwDOQnHzbs4C0BbE"
+mapping = "pathname"
+lightTheme = "light"
+darkTheme = "dark"
+reactionsEnabled = true
+emitMetadata = false
 
 [comments.gitalk]
 owner = ""
