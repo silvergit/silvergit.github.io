@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on morface</title><link>https://silvergit.github.io/en/post/</link><description>Recent content in Posts on morface</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 18 Dec 2025 20:47:29 +0330</lastBuildDate><atom:link href="https://silvergit.github.io/en/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux Distribution Package Count Comparison</title><link>https://silvergit.github.io/en/p/linux-distribution-package-count-comparison/</link><pubDate>Thu, 18 Dec 2025 20:47:29 +0330</pubDate><guid>https://silvergit.github.io/en/p/linux-distribution-package-count-comparison/</guid><description>&lt;h2 id="comparing-major-linux-distributions-based-on-available-packages-in-repositories"&gt;Comparing Major Linux Distributions: Based on Available Packages in Repositories
+&lt;/h2&gt;&lt;p&gt;A key question to ask yourself when choosing a Linux distribution is: Which one has the most packages available in its repositories for installation? In other words, in which distribution do you have the most freedom to install various programs?&lt;/p&gt;
+&lt;p&gt;Giving a definitive answer to this question is very difficult. There are many reasons why a clear-cut answer isn&amp;rsquo;t possible, but I&amp;rsquo;ll list a few:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In the &lt;code&gt;AUR&lt;/code&gt;, we don&amp;rsquo;t download ready-to-install packages; we only receive the installation instructions for them.&lt;/li&gt;
+&lt;li&gt;A high package count isn&amp;rsquo;t necessarily a good thing; the stability of the distribution is more important.&lt;/li&gt;
+&lt;li&gt;Third-party repositories are not considered in this comparison because they are not easily quantifiable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="ranking-based-on-package-count-in-repositories"&gt;Ranking Based on Package Count in Repositories
+&lt;/h2&gt;&lt;h3 id="1-archlinux--aur---the-unrivaled-king"&gt;1. &lt;code&gt;Archlinux + AUR&lt;/code&gt; - The Unrivaled King
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Main Arch Linux repository: Approximately 15,000 high-quality and up-to-date packages.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;AUR&lt;/code&gt; repository: A true giant with over &lt;strong&gt;90,000 packages&lt;/strong&gt;! Here, users upload build scripts (&lt;code&gt;PKGBUILD&lt;/code&gt;) for almost any software you can imagine.&lt;/li&gt;
+&lt;li&gt;Thanks to the &lt;code&gt;AUR&lt;/code&gt;, almost any program is available for installation in the repositories, and you always get the latest version. This method keeps you constantly updated and gives you access to a world of packages, but the flip side is that your system may become unstable due to using these packages.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="2-fedora--rpm-fusion---the-balanced-choice"&gt;2. &lt;code&gt;Fedora + RPM Fusion&lt;/code&gt; - The Balanced Choice
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Main repository: About 60,000 tested and secure packages.&lt;/li&gt;
+&lt;li&gt;By enabling the &lt;code&gt;RPM Fusion&lt;/code&gt; repository, you enter a world of installable packages.&lt;/li&gt;
+&lt;li&gt;Unlike the &lt;code&gt;AUR&lt;/code&gt;, &lt;code&gt;RPM Fusion&lt;/code&gt; provides pre-compiled binaries instead of source-based packages, meaning faster and easier package installation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="3-opensuse--obs---the-most-management-tools"&gt;3. &lt;code&gt;openSUSE + OBS&lt;/code&gt; - The Most Management Tools
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;The main openSUSE repository has about 20,000 stable packages.&lt;/li&gt;
+&lt;li&gt;By enabling &lt;code&gt;OBS&lt;/code&gt; (Open Build Service), you gain access to over &lt;strong&gt;125,000 packages&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;OBS&lt;/code&gt; doesn&amp;rsquo;t work in a centralized manner like the &lt;code&gt;AUR&lt;/code&gt;. You need to manually add repositories to your system by searching on its website or using tools.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="4-ubuntu--ppa---convenience-at-the-cost-of-fragmentation"&gt;4. &lt;code&gt;Ubuntu + PPA&lt;/code&gt; - Convenience at the Cost of Fragmentation
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Main repository: Between 60,000 to 70,000 packages.&lt;/li&gt;
+&lt;li&gt;Personal Package Archives (&lt;code&gt;PPA&lt;/code&gt;) are created and maintained by users. You have to search for them. The trustworthiness, currency, and security of PPAs are not uniform and can vary greatly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="5-debian---complete-stability"&gt;5. &lt;code&gt;Debian&lt;/code&gt; - Complete Stability
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Main repository: 64,000 secure and thoroughly tested packages.&lt;/li&gt;
+&lt;li&gt;Packages are rigorously tested for compatibility and security.&lt;/li&gt;
+&lt;li&gt;Other software must be compiled manually.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="summary"&gt;Summary
+&lt;/h2&gt;&lt;h3 id="based-on-package-count-in-repositories"&gt;Based on Package Count in Repositories
+&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left"&gt;Distribution&lt;/th&gt;
+&lt;th style="text-align: left"&gt;Main Repo&lt;/th&gt;
+&lt;th style="text-align: left"&gt;Supplementary Repo&lt;/th&gt;
+&lt;th style="text-align: left"&gt;Total Accessible Packages&lt;/th&gt;
+&lt;th style="text-align: left"&gt;Strength&lt;/th&gt;
+&lt;th style="text-align: left"&gt;Weakness&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Arch&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Medium (~15k)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;AUR (Largest ~90k+)&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;100,000+&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Latest versions, comprehensiveness&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Requires more technical knowledge&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Fedora&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Large (~60k)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;RPM Fusion (Very Large)&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;~80,000+&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Excellent balance between new and stable&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Requires enabling an additional repo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;openSUSE&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Medium (~20k)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;OBS (Very Large ~125k)&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;~140,000+&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Excellent tools, stable&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Lower popularity, fewer Persian resources&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Ubuntu&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Very Large (from Debian)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;PPAs (Fragmented)&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Unspecified (Very High)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Large community, abundant guides&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Inconsistent PPA quality&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Debian&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Very Large (~64k)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Very Limited&lt;/td&gt;
+&lt;td style="text-align: left"&gt;~64,000 (Stable)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Unparalleled stability &amp;amp; security&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Older software versions&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br /&gt;
+&lt;h3 id="which-distribution-is-right-for-you"&gt;Which Distribution is Right for You?
+&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left"&gt;Distribution&lt;/th&gt;
+&lt;th style="text-align: left"&gt;Key to Accessing the Software World&lt;/th&gt;
+&lt;th style="text-align: left"&gt;Best For&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Arch Linux&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;AUR&lt;/strong&gt; (Over 90k packages)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Technology seekers, customization enthusiasts, those who want the latest versions.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Fedora&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Main repo + RPM Fusion&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Those seeking &lt;strong&gt;balance&lt;/strong&gt; between up-to-date software and system stability.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;openSUSE&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Main repo + OBS&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Professional users who need power, excellent management tools, and extensive, high-quality repositories.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Ubuntu&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Main repo + PPAs&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Beginners and those who prefer &lt;strong&gt;convenience&lt;/strong&gt;, extensive support, and abundant tutorials.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Debian&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Main repo only&lt;/strong&gt; (Stable)&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Server administrators and those who prioritize &lt;strong&gt;stability and security&lt;/strong&gt; over everything else—even being up-to-date.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;[file content end]&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description></item><item><title>Create Static Site With Hugo</title><link>https://silvergit.github.io/en/p/create-static-site-with-hugo/</link><pubDate>Tue, 16 Dec 2025 11:43:27 +0330</pubDate><guid>https://silvergit.github.io/en/p/create-static-site-with-hugo/</guid><description>&lt;h1 id="introduction"&gt;Introduction
+&lt;/h1&gt;&lt;p&gt;As promised, I have prepared a tutorial on creating a static site using &lt;a class="link" href="https://gohugo.io/" target="_blank" rel="noopener"
+&gt;Hugo&lt;/a&gt; and deploying it on &lt;a class="link" href="https://pages.github.com/" target="_blank" rel="noopener"
+&gt;GitHub Pages&lt;/a&gt;. I will update this post with every change I make to my own site and add any new features I use.&lt;/p&gt;
+&lt;h1 id="difference-between-static-and-dynamic-sites"&gt;Difference Between Static and Dynamic Sites
+&lt;/h1&gt;&lt;p&gt;The first thing we need to discuss is whether you need a static site or a dynamic site. A static site is a collection of &lt;code&gt;html&lt;/code&gt;, &lt;code&gt;css&lt;/code&gt;, or JavaScript files that are displayed to the user exactly as they were coded. Any changes are only shown to the user by modifying the site&amp;rsquo;s code. In contrast, a dynamic site displays content interactively to the user without needing to edit the code, and its content can be changed dynamically. Now, let&amp;rsquo;s compare these two types of sites.&lt;/p&gt;
+&lt;p&gt;Static sites are very fast and require minimal cost for development and setup. However, their content is fixed, they have very limited features, and managing the site becomes very difficult as it grows.&lt;/p&gt;
+&lt;p&gt;Dynamic sites have dynamic content. They can interact with users, content management is very easy, and they have advanced features. However, they are slower, more complex to develop, and require significantly higher costs for setup and maintenance.&lt;/p&gt;
+&lt;h2 id="which-one-should-i-choose"&gt;Which One Should I Choose
+&lt;/h2&gt;&lt;p&gt;If you are a blogger, need a small personal site, or want to create a small educational site, it is better to use a static site. However, if you are planning a large project, a commercial venture, or something like an online store, you should definitely opt for a dynamic site.&lt;/p&gt;
+&lt;h1 id="setting-up-a-static-site-with-hugo-and-github-pages"&gt;Setting Up a Static Site with Hugo and GitHub Pages
+&lt;/h1&gt;&lt;h2 id="introduction-1"&gt;Introduction
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Hugo&lt;/code&gt; is a fast and modern framework for building static sites, written in &lt;code&gt;Go&lt;/code&gt;. &lt;code&gt;GitHub Pages&lt;/code&gt; is a free hosting service for static sites. Combining these two provides an ideal solution for creating blogs, documentation, or personal websites.&lt;/p&gt;
+&lt;h2 id="advantages"&gt;Advantages
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;High Speed&lt;/strong&gt;: Static Hugo sites load very quickly.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Security&lt;/strong&gt;: Without a database or backend code, vulnerabilities are reduced.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Free&lt;/strong&gt;: GitHub Pages provides hosting services for free.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Easy Management&lt;/strong&gt;: With Git, you can have a complete history of changes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Diverse Themes&lt;/strong&gt;: Hundreds of free themes are available for Hugo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="prerequisites"&gt;Prerequisites
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Install &lt;code&gt;Git&lt;/code&gt; (&lt;a class="link" href="https://git-scm.com/" target="_blank" rel="noopener"
+&gt;Download&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;A &lt;code&gt;GitHub&lt;/code&gt; account (&lt;a class="link" href="https://github.com/" target="_blank" rel="noopener"
+&gt;Sign up&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Install &lt;code&gt;Hugo&lt;/code&gt; (&lt;a class="link" href="https://gohugo.io/getting-started/installing/" target="_blank" rel="noopener"
+&gt;Installation Guide&lt;/a&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="setup-steps"&gt;Setup Steps
+&lt;/h2&gt;&lt;h3 id="1-install-hugo"&gt;1. Install Hugo
+&lt;/h3&gt;&lt;p&gt;To install Hugo, go to this &lt;a class="link" href="https://gohugo.io/installation/" target="_blank" rel="noopener"
+&gt;address&lt;/a&gt; and install it according to your operating system.
+I use Arch Linux, so I&amp;rsquo;ll install it with &lt;code&gt;pacman&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo pacman -S hugo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="2-create-a-new-hugo-project"&gt;2. Create a New Hugo Project
+&lt;/h3&gt;&lt;p&gt;Now open the terminal and navigate to the directory where you want your site to be created, then run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo new site your-site-name
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; your-site-name
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;That&amp;rsquo;s it. You now have a static site.&lt;/p&gt;
+&lt;h3 id="3-add-a-theme"&gt;3. Add a Theme
+&lt;/h3&gt;&lt;p&gt;Go to the &lt;a class="link" href="https://themes.gohugo.io/" target="_blank" rel="noopener"
+&gt;Hugo Themes&lt;/a&gt; site and choose a theme for your site. Make sure to select a multilingual theme. I chose the &lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
+&gt;stack&lt;/a&gt; theme.&lt;/p&gt;
+&lt;p&gt;To install &lt;code&gt;stack&lt;/code&gt;, the best way is to use the ready-made template they&amp;rsquo;ve provided. Go to this &lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack-starter" target="_blank" rel="noopener"
+&gt;address&lt;/a&gt; and click on &lt;code&gt;Use this template&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/5889006/156916624-20b2a784-f3a9-4718-aa5f-ce2a436b241f.png"
+loading="lazy"
+alt="create-repo-from-template"
+&gt;&lt;/p&gt;
+&lt;p&gt;Now select Create new repository.&lt;/p&gt;
+&lt;p&gt;In the window that opens, in the &lt;code&gt;Repository name&lt;/code&gt; field, choose the name for the new repository, which is your site. The name format should be like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;username.github.io
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;where &lt;code&gt;username&lt;/code&gt; is your GitHub username.&lt;/p&gt;
+&lt;p&gt;Now click &lt;code&gt;create repository&lt;/code&gt;. That&amp;rsquo;s it, and your site with the &lt;code&gt;stack&lt;/code&gt; theme is set up on GitHub. There&amp;rsquo;s just one more step: go to the settings of the created repository and select &lt;code&gt;Pages&lt;/code&gt;. Now change the &lt;code&gt;Build branch&lt;/code&gt; from &lt;code&gt;master&lt;/code&gt; to &lt;code&gt;gh-pages&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://private-user-images.githubusercontent.com/16586200/298284692-12c763cd-bead-4923-b610-8788f388fcb5.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjU5MTIzMjcsIm5iZiI6MTc2NTkxMjAyNywicGF0aCI6Ii8xNjU4NjIwMC8yOTgyODQ2OTItMTJjNzYzY2QtYmVhZC00OTIzLWI2MTAtODc4OGYzODhmY2I1LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTEyMTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMjE2VDE5MDcwN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWRlMmJmYmIyM2FkZTE5OWU2NDNhNDRhNDU5ZDM5M2RmM2JiYTIzOWJmOWZkMWNkM2I4ZTY5MWRkZjk3Yjg1YWQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.PQGXP8dMQPOwGP4NzftOSNPP8FRmZ_2z1b_2waQXWqw"
+loading="lazy"
+alt="change-build-branch"
+&gt;&lt;/p&gt;
+&lt;p&gt;Okay, our work here is done, and we don&amp;rsquo;t need to do anything else here.&lt;/p&gt;
+&lt;h3 id="4-clone-the-site-locally"&gt;4. Clone the Site Locally
+&lt;/h3&gt;&lt;p&gt;Congratulations! You&amp;rsquo;ve done well so far. Let&amp;rsquo;s create a clone of our site on our local system.&lt;/p&gt;
+&lt;p&gt;Open the terminal and enter this command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git clone https://github.com/username/username.github.io.git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Replace &lt;code&gt;username&lt;/code&gt; with your own username. For example, if you want to clone my site:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git clone https://github.com/silvergit/silvergit.github.io.git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Now go to the site folder:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; silvergit.github.io
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;And run Hugo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo server -D
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;The output will give you a link where you can see the local output of your site:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Built in &lt;span class="m"&gt;133&lt;/span&gt; ms
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Environment: &lt;span class="s2"&gt;&amp;#34;development&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Serving pages from disk
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Web Server is available at http://localhost:1313/ &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;bind&lt;/span&gt; address 127.0.0.1&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Press Ctrl+C to stop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;For me, it&amp;rsquo;s: &lt;code&gt;http://localhost:1313/&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="5-first-site-post"&gt;5. First Site Post
+&lt;/h3&gt;&lt;p&gt;Let&amp;rsquo;s create a new page. To do this, enter this command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo new content posts/hello.md
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;A new markdown file will be created for you in the &lt;code&gt;content&lt;/code&gt; folder.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Use an editor like &lt;code&gt;vscode&lt;/code&gt; for writing &lt;code&gt;markdown&lt;/code&gt; files.&lt;/p&gt;
+&lt;p&gt;Copy this text into the file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;title: &amp;#34;Hello World&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;description: &amp;#34;First site post&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;date: 2025-12-12T12:53:03+03:30
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;image:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;math:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;license:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hidden: false
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;comments: true
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;draft: false
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;categories: [&amp;#34;General&amp;#34;]
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;tags: []
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;This is my first post on this site.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Hugo reads the top part of the file and decides what to do with it. For example, when the file was created, what the page title is, or what tags should be introduced for this page.&lt;/p&gt;
+&lt;p&gt;The last line is what you will see in your first post. Close the file and run Hugo again.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo server -D
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="6-configure-the-configtoml-file"&gt;6. Configure the &lt;code&gt;config.toml&lt;/code&gt; File
+&lt;/h3&gt;&lt;p&gt;The configuration file is usually located at the root of the project, but sometimes you can also find it in the &lt;code&gt;config&lt;/code&gt; or &lt;code&gt;config/_default&lt;/code&gt; folder.&lt;/p&gt;
+&lt;p&gt;You can see a simple example of the config:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;baseURL&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;https://username.github.io/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;languageCode&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;fa-ir&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;title&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Your Site Title&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;theme&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;ananke&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;params&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;description&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Your site description&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;My config looks like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# Change baseurl before deploy&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;baseurl&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;https://silvergit.github.io/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;languageCode&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;en-us&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;title&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Morface&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# Theme i18n support&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# Available values: en, fr, id, ja, ko, pt-br, zh-cn, zh-tw, es, de, nl, it, th, el, uk, ar&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;defaultContentLanguage&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;fa&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# This will make .Summary and .WordCount behave correctly for CJK languages.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;hasCJKLanguage&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# Change it to your Disqus shortname before using&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;disqusShortname&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;hugo-theme-stack&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;pagination&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;pagerSize&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;All my site&amp;rsquo;s config is created in separate files:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;config
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└── _default
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ├── config.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ├── languages.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ├── markup.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ├── menu.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ├── module.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ├── params.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ├── permalinks.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; └── related.toml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; You can use only one file and copy all these settings into the &lt;code&gt;config.toml&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;I use the &lt;code&gt;languages.toml&lt;/code&gt; file for making the site bilingual:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;fa&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;languageName&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;فارسی&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;languagedirection&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;rtl&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;title&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;مورفیس&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;weight&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;en&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;languageName&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;English&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;languagedirection&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;ltr&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;title&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;morface&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;weight&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="7-upload-changes-to-github"&gt;7. Upload Changes to GitHub
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; public
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git init
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git add .
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git commit -m &lt;span class="s2"&gt;&amp;#34;First publish&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git branch -M main
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git remote add origin https://github.com/username/username.github.io.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git push -u origin main
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="important-notes"&gt;Important Notes
+&lt;/h2&gt;&lt;h3 id="custom-domain"&gt;Custom Domain
+&lt;/h3&gt;&lt;p&gt;If you want to use a custom domain:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a &lt;code&gt;CNAME&lt;/code&gt; file in the &lt;code&gt;static&lt;/code&gt; folder.&lt;/li&gt;
+&lt;li&gt;Enter your domain name in it.&lt;/li&gt;
+&lt;li&gt;Configure your &lt;code&gt;DNS&lt;/code&gt; according to the GitHub Pages guide.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="search-engine-optimization"&gt;Search Engine Optimization
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Use SEO-Friendly themes.&lt;/li&gt;
+&lt;li&gt;Configure meta tags correctly.&lt;/li&gt;
+&lt;li&gt;Choose a readable URL structure.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="persian-language-support"&gt;Persian Language Support
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Set the &lt;code&gt;languageCode&lt;/code&gt; value to &lt;code&gt;fa-ir&lt;/code&gt; in &lt;code&gt;config.toml&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Use themes with RTL support.&lt;/li&gt;
+&lt;li&gt;Add appropriate Persian fonts.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="useful-resources"&gt;Useful Resources
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://gohugo.io/documentation/" target="_blank" rel="noopener"
+&gt;Official Hugo Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://docs.github.com/pages" target="_blank" rel="noopener"
+&gt;GitHub Pages Guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://themes.gohugo.io/" target="_blank" rel="noopener"
+&gt;Hugo Themes Gallery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://www.markdownguide.org/" target="_blank" rel="noopener"
+&gt;Markdown Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="conclusion"&gt;Conclusion
+&lt;/h2&gt;&lt;p&gt;Using Hugo and GitHub Pages, you can set up a professional static site in the shortest time and at no cost. This method is ideal for bloggers, developers, and small businesses.&lt;/p&gt;</description></item><item><title>Hello World</title><link>https://silvergit.github.io/en/p/hello-world/</link><pubDate>Fri, 12 Dec 2025 12:53:11 +0330</pubDate><guid>https://silvergit.github.io/en/p/hello-world/</guid><description>&lt;p&gt;This is my first post on this site. I decided to write here again. I started a little late, but &lt;a class="link" href="https://pages.github.com/" target="_blank" rel="noopener"
+&gt;GitPages&lt;/a&gt; and &lt;a class="link" href="https://gohugo.io/" target="_blank" rel="noopener"
+&gt;Hugo&lt;/a&gt; are the best options for static sites in my opinion, and for someone like me who writes mostly about code and Linux, I think a static site hosted by GitHub would be the best option.&lt;/p&gt;
+&lt;p&gt;I will definitely write an article about building a static site later, because there are few tutorials for it on the internet.&lt;/p&gt;
+&lt;p&gt;I hope that with what I write here, I can help someone somewhere in the world solve a small problem.&lt;/p&gt;</description></item></channel></rss>

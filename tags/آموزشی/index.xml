@@ -1,0 +1,1787 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>آموزشی on مورفیس</title><link>https://silvergit.github.io/tags/%D8%A2%D9%85%D9%88%D8%B2%D8%B4%DB%8C/</link><description>Recent content in آموزشی on مورفیس</description><generator>Hugo -- gohugo.io</generator><language>fa</language><lastBuildDate>Tue, 16 Dec 2025 11:43:23 +0330</lastBuildDate><atom:link href="https://silvergit.github.io/tags/%D8%A2%D9%85%D9%88%D8%B2%D8%B4%DB%8C/index.xml" rel="self" type="application/rss+xml"/><item><title>ساخت سایت استاتیک با Hugo</title><link>https://silvergit.github.io/p/%D8%B3%D8%A7%D8%AE%D8%AA-%D8%B3%D8%A7%DB%8C%D8%AA-%D8%A7%D8%B3%D8%AA%D8%A7%D8%AA%DB%8C%DA%A9-%D8%A8%D8%A7-hugo/</link><pubDate>Tue, 16 Dec 2025 11:43:23 +0330</pubDate><guid>https://silvergit.github.io/p/%D8%B3%D8%A7%D8%AE%D8%AA-%D8%B3%D8%A7%DB%8C%D8%AA-%D8%A7%D8%B3%D8%AA%D8%A7%D8%AA%DB%8C%DA%A9-%D8%A8%D8%A7-hugo/</guid><description>&lt;h1 id="مقدمه"&gt;مقدمه
+&lt;/h1&gt;&lt;p&gt;خوب همونطور که قرار شد یه آموزش برای ساخت یه سایت استاتیک با استفاده از &lt;a class="link" href="https://gohugo.io/" target="_blank" rel="noopener"
+&gt;Hugo&lt;/a&gt; و استقرار اون روی &lt;a class="link" href="https://pages.github.com/" target="_blank" rel="noopener"
+&gt;صفحات گیت‌هاب&lt;/a&gt; رو براتون آماده کردم. با هر تغییری که روی سایت خودم میدم این پست رو آپدیت می‌کنم و امکانات جدیدی که خودم ازشون استفاده می‌کنم رو به این پست اضافه خواهم کرد.&lt;/p&gt;
+&lt;h1 id="تفاوت-سایت-ایستا-و-پویا"&gt;تفاوت سایت ایستا و پویا
+&lt;/h1&gt;&lt;p&gt;اولین چیزی که باید راجع بهش صحبت کنیم، اینه که شما نیاز به یه سایت استاتیک (ایستا) دارید و یا باید یک سایت داینامیک (پویا) داشته باشید. سایت ایستا مجموعه‌ای از فایل‌های &lt;code&gt;html&lt;/code&gt; ،&lt;code&gt;css&lt;/code&gt; یا جاوا اسکریپته که همون طوری که کد نویسی شده، به کاربر نمایش داده می‌شه و هر تغییری، فقط با تغییر کدهای سایت به کاربر نشون داده میشه. اما در عوض سایت پویا سایتیه که محتواش بدون نیاز به ویرایش کدها، به صورت تعاملی به کاربر نشون داده میشه و قابل تغییره. خوب حالا بیاین این دو مدل از سایت رو با هم مقایسه کنیم.&lt;/p&gt;
+&lt;p&gt;سایت‌های استاتیک سرعت بسیار بالایی دارند و هزینه بسیار کمی برای توسعه و راه‌اندازی اون‌ها مورد نیازه اما در عوض محتواشون ثابته و قابلیت‌های بسیار محدودی دارند و زمانی که حجم سایت زیاد می‌شه مدیریت سایت بسیار دشوار می‌شه.&lt;/p&gt;
+&lt;p&gt;سایت‌های داینامیک محتوای پویایی دارند. میتونن با کاربر تعامل کنند و مدیریت محتوا در این سایت‌ها بسیار راحته و قابلیت‌های پیشرفته‌ای دارند، اما در عوض سرعت کمتر توسعه پیچیده‌تر و هزینه بسیار بیشتری برای راه‌اندازی و نگهداری دارند.&lt;/p&gt;
+&lt;h2 id="کدام-را-انتخاب-کنم"&gt;کدام را انتخاب کنم
+&lt;/h2&gt;&lt;p&gt;اگه شما یک بلاگرید یا نیاز به یه سایت شخصی کوچیک دارید یا یه سایت آموزشی کوچیک می‌خواین بسازین بهتره که از سایت ایستا استفاده کنید، اما اگر قراره که یک کار بزرگ انجام بدین یا یه کار تجاری یا یه چیزی مثل یک فروشگاه حتماً باید سراغ سایت‌های داینامیک برید.&lt;/p&gt;
+&lt;h1 id="راهاندازی-سایت-استاتیک-با-hugo-و-github-pages"&gt;راه‌اندازی سایت استاتیک با &lt;code&gt;Hugo&lt;/code&gt; و &lt;code&gt;GitHub Pages&lt;/code&gt;
+&lt;/h1&gt;&lt;h2 id="معرفی"&gt;معرفی
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Hugo&lt;/code&gt; یک فریم‌ورک سریع و مدرن برای ساخت سایت‌های استاتیک است که با زبان &lt;code&gt;Go&lt;/code&gt; نوشته شده. &lt;code&gt;GitHub Pages&lt;/code&gt; یک سرویس میزبانی رایگان برای سایت‌های استاتیک است. ترکیب این دو، راه‌حلی ایده‌آل برای ایجاد وبلاگ، مستندات یا وبسایت شخصی ارائه می‌دهد.&lt;/p&gt;
+&lt;h2 id="مزایا"&gt;مزایا
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;سرعت بالا&lt;/strong&gt;: سایت‌های استاتیک &lt;code&gt;Hugo&lt;/code&gt; بسیار سریع بارگذاری می‌شوند&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;امنیت&lt;/strong&gt;: بدون پایگاه داده یا کد &lt;code&gt;backend&lt;/code&gt;، آسیب‌پذیری کاهش می‌یابد&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;رایگان&lt;/strong&gt;: &lt;code&gt;GitHub Pages&lt;/code&gt; به صورت رایگان سرویس میزبانی ارائه می‌دهد&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;مدیریت آسان&lt;/strong&gt;: با &lt;code&gt;Git&lt;/code&gt; می‌توانید تاریخچه کامل تغییرات را داشته باشید&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;قالب‌های متنوع&lt;/strong&gt;: صدها قالب رایگان برای &lt;code&gt;Hugo&lt;/code&gt; موجود است&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="پیشنیازها"&gt;پیش‌نیازها
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;نصب &lt;code&gt;Git&lt;/code&gt; (&lt;a class="link" href="https://git-scm.com/" target="_blank" rel="noopener"
+&gt;دانلود&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;حساب کاربری &lt;code&gt;GitHub&lt;/code&gt; (&lt;a class="link" href="https://github.com/" target="_blank" rel="noopener"
+&gt;ثبت‌نام&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;نصب &lt;code&gt;Hugo&lt;/code&gt; (&lt;a class="link" href="https://gohugo.io/getting-started/installing/" target="_blank" rel="noopener"
+&gt;راهنمای نصب&lt;/a&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="مراحل-راهاندازی"&gt;مراحل راه‌اندازی
+&lt;/h2&gt;&lt;h3 id="۱-نصب-hugo"&gt;۱. نصب &lt;code&gt;Hugo&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;برای نصب &lt;code&gt;Hugo&lt;/code&gt; به این &lt;a class="link" href="https://gohugo.io/installation/" target="_blank" rel="noopener"
+&gt;آدرس&lt;/a&gt; برید و بسته به نوع سیستم عامل خودتون نصبش کنید.
+من از آرچ لینوکس استفاده می‌کنم.پس با &lt;code&gt;pacman&lt;/code&gt; نصبش می‌کنم:&lt;/p&gt;
+&lt;div class="code-container" dir="ltr"&gt;&lt;div class="code-header"&gt;
+&lt;div class="file-info"&gt;
+&lt;svg class="file-icon" viewBox="0 0 24 24"&gt;
+&lt;path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"&gt;&lt;/path&gt;
+&lt;polyline points="13 2 13 9 20 9"&gt;&lt;/polyline&gt;
+&lt;/svg&gt;
+&lt;span class="filename"&gt;bash&lt;/span&gt;&lt;span class="language-badge"&gt;bash&lt;/span&gt;&lt;/div&gt;&lt;button class="copy-button" onclick="copyCode(this)"&gt;
+&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+copy
+&lt;/button&gt;&lt;/div&gt;&lt;div class="code-content"&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo pacman -S hugo&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;script&gt;
+function copyCode(button) {
+const codeContent = button.closest('.code-container').querySelector('pre code');
+const text = codeContent.textContent;
+navigator.clipboard.writeText(text).then(() =&gt; {
+const originalText = button.innerHTML;
+button.innerHTML = '&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;&lt;polyline points="20 6 9 17 4 12"&gt;&lt;/polyline&gt;&lt;/svg&gt;کپی شد!';
+button.style.background = '#10b981';
+setTimeout(() =&gt; {
+button.innerHTML = originalText;
+button.style.background = '';
+}, 2000);
+});
+}
+&lt;/script&gt;
+&lt;style&gt;
+.code-container {
+margin: 2rem 0;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.code-header {
+background: #1e293b;
+color: #e2e8f0;
+padding: 0.8rem 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #334155;
+}
+.file-info {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+.file-icon {
+width: 18px;
+height: 18px;
+fill: #94a3b8;
+}
+.filename {
+font-weight: 500;
+}
+.language-badge {
+background: #475569;
+padding: 0.2rem 0.6rem;
+border-radius: 4px;
+font-size: 0.8rem;
+margin-left: 0.5rem;
+}
+.copy-button {
+background: #3b82f6;
+color: white;
+border: none;
+padding: 0.4rem 0.8rem;
+border-radius: 6px;
+cursor: pointer;
+font-family: inherit;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 0.3rem;
+transition: background 0.2s;
+}
+.copy-button:hover {
+background: #2563eb;
+}
+.copy-icon {
+width: 16px;
+height: 16px;
+fill: currentColor;
+}
+.code-content pre {
+margin: 0;
+border-radius: 0 0 10px 10px;
+}
+&lt;/style&gt;
+&lt;h3 id="۲-ایجاد-پروژه-جدید-hugo"&gt;۲. ایجاد پروژه جدید Hugo
+&lt;/h3&gt;&lt;p&gt;حالا ترمینال رو باز کنید و به آدرسی برید که می‌خواهید سایتتون اونجا ساخته بشه و&lt;/p&gt;
+&lt;div class="code-container" dir="ltr"&gt;&lt;div class="code-header"&gt;
+&lt;div class="file-info"&gt;
+&lt;svg class="file-icon" viewBox="0 0 24 24"&gt;
+&lt;path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"&gt;&lt;/path&gt;
+&lt;polyline points="13 2 13 9 20 9"&gt;&lt;/polyline&gt;
+&lt;/svg&gt;
+&lt;span class="filename"&gt;bash&lt;/span&gt;&lt;span class="language-badge"&gt;bash&lt;/span&gt;&lt;/div&gt;&lt;button class="copy-button" onclick="copyCode(this)"&gt;
+&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+copy
+&lt;/button&gt;&lt;/div&gt;&lt;div class="code-content"&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo new site نام-سایت-شما
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; نام-سایت-شما&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;script&gt;
+function copyCode(button) {
+const codeContent = button.closest('.code-container').querySelector('pre code');
+const text = codeContent.textContent;
+navigator.clipboard.writeText(text).then(() =&gt; {
+const originalText = button.innerHTML;
+button.innerHTML = '&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;&lt;polyline points="20 6 9 17 4 12"&gt;&lt;/polyline&gt;&lt;/svg&gt;کپی شد!';
+button.style.background = '#10b981';
+setTimeout(() =&gt; {
+button.innerHTML = originalText;
+button.style.background = '';
+}, 2000);
+});
+}
+&lt;/script&gt;
+&lt;style&gt;
+.code-container {
+margin: 2rem 0;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.code-header {
+background: #1e293b;
+color: #e2e8f0;
+padding: 0.8rem 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #334155;
+}
+.file-info {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+.file-icon {
+width: 18px;
+height: 18px;
+fill: #94a3b8;
+}
+.filename {
+font-weight: 500;
+}
+.language-badge {
+background: #475569;
+padding: 0.2rem 0.6rem;
+border-radius: 4px;
+font-size: 0.8rem;
+margin-left: 0.5rem;
+}
+.copy-button {
+background: #3b82f6;
+color: white;
+border: none;
+padding: 0.4rem 0.8rem;
+border-radius: 6px;
+cursor: pointer;
+font-family: inherit;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 0.3rem;
+transition: background 0.2s;
+}
+.copy-button:hover {
+background: #2563eb;
+}
+.copy-icon {
+width: 16px;
+height: 16px;
+fill: currentColor;
+}
+.code-content pre {
+margin: 0;
+border-radius: 0 0 10px 10px;
+}
+&lt;/style&gt;
+&lt;p&gt;تمام. حالا شما یک سایت ایستا دارید.&lt;/p&gt;
+&lt;h3 id="۳-اضافه-کردن-قالب"&gt;۳. اضافه کردن قالب
+&lt;/h3&gt;&lt;p&gt;به سایت &lt;a class="link" href="https://themes.gohugo.io/" target="_blank" rel="noopener"
+&gt;Hugo Themes&lt;/a&gt; برید و یه قالب برای سایتتون انتخاب کنید. حواستون باشه که یه قالب چنذزبانه انتخاب کنید. من قالب &lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
+&gt;stack&lt;/a&gt; رو انتخاب کردم.&lt;/p&gt;
+&lt;p&gt;برای نصب &lt;code&gt;stack&lt;/code&gt; بهترین کار اینه که از تمپلیت آماده‌ای که برامون گذاشته استفاده کنیم. به این &lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack-starter" target="_blank" rel="noopener"
+&gt;آدرس&lt;/a&gt; برید و روی &lt;code&gt;Use this template&lt;/code&gt; کلیک کنید.
+&lt;img src="https://user-images.githubusercontent.com/5889006/156916624-20b2a784-f3a9-4718-aa5f-ce2a436b241f.png"
+loading="lazy"
+alt="create-repo-from-template"
+&gt;
+حالا Create new reposity رو انتخاب کنید.&lt;/p&gt;
+&lt;p&gt;در پنجره‌ای که براتون باز می‌شه در قسمت &lt;code&gt;Repository name&lt;/code&gt; نام مخزن جدید که همون سایتتونه رو انتخاب کنید. فرمت نام باید به این شکل باشه:&lt;/p&gt;
+&lt;p&gt;&lt;div class="code-container" dir="ltr"&gt;&lt;div class="code-content"&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;username.github.io&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;script&gt;
+function copyCode(button) {
+const codeContent = button.closest('.code-container').querySelector('pre code');
+const text = codeContent.textContent;
+navigator.clipboard.writeText(text).then(() =&gt; {
+const originalText = button.innerHTML;
+button.innerHTML = '&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;&lt;polyline points="20 6 9 17 4 12"&gt;&lt;/polyline&gt;&lt;/svg&gt;کپی شد!';
+button.style.background = '#10b981';
+setTimeout(() =&gt; {
+button.innerHTML = originalText;
+button.style.background = '';
+}, 2000);
+});
+}
+&lt;/script&gt;
+&lt;style&gt;
+.code-container {
+margin: 2rem 0;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.code-header {
+background: #1e293b;
+color: #e2e8f0;
+padding: 0.8rem 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #334155;
+}
+.file-info {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+.file-icon {
+width: 18px;
+height: 18px;
+fill: #94a3b8;
+}
+.filename {
+font-weight: 500;
+}
+.language-badge {
+background: #475569;
+padding: 0.2rem 0.6rem;
+border-radius: 4px;
+font-size: 0.8rem;
+margin-left: 0.5rem;
+}
+.copy-button {
+background: #3b82f6;
+color: white;
+border: none;
+padding: 0.4rem 0.8rem;
+border-radius: 6px;
+cursor: pointer;
+font-family: inherit;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 0.3rem;
+transition: background 0.2s;
+}
+.copy-button:hover {
+background: #2563eb;
+}
+.copy-icon {
+width: 16px;
+height: 16px;
+fill: currentColor;
+}
+.code-content pre {
+margin: 0;
+border-radius: 0 0 10px 10px;
+}
+&lt;/style&gt;
+که username همون نام کاربری گیت‌هابتونه.&lt;/p&gt;
+&lt;p&gt;حالا &lt;code&gt;create repository&lt;/code&gt; رو بزنید. کار تمامه و سایت شما با قالب &lt;code&gt;stack&lt;/code&gt; روی گیت‌هاب سوار شده. فقط یک مرحله‌ی دیگه مونده و اونم اینه که به قسمت تنظیمات مخزن ساخته شده برید و &lt;code&gt;Pages&lt;/code&gt; رو انتخاب کنید. حالا &lt;code&gt;Build branch&lt;/code&gt; رو از &lt;code&gt;master&lt;/code&gt; به &lt;code&gt;gh-pages&lt;/code&gt; تغییر بدید.
+&lt;img src="https://private-user-images.githubusercontent.com/16586200/298284692-12c763cd-bead-4923-b610-8788f388fcb5.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjU5MTIzMjcsIm5iZiI6MTc2NTkxMjAyNywicGF0aCI6Ii8xNjU4NjIwMC8yOTgyODQ2OTItMTJjNzYzY2QtYmVhZC00OTIzLWI2MTAtODc4OGYzODhmY2I1LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTEyMTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMjE2VDE5MDcwN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWRlMmJmYmIyM2FkZTE5OWU2NDNhNDRhNDU5ZDM5M2RmM2JiYTIzOWJmOWZkMWNkM2I4ZTY5MWRkZjk3Yjg1YWQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.PQGXP8dMQPOwGP4NzftOSNPP8FRmZ_2z1b_2waQXWqw"
+loading="lazy"
+alt="change-build-branch"
+&gt;&lt;/p&gt;
+&lt;p&gt;خب کار ما تمامه و دیگه اینجا کاری نداریم.&lt;/p&gt;
+&lt;h3 id="۴-ساخت-یک-کلون-از-سایت-روی-سیستم-محلی"&gt;۴. ساخت یک کلون از سایت روی سیستم محلی
+&lt;/h3&gt;&lt;p&gt;تبریک میگم:) تا اینجای کار رو خوب پیش اومدید. بیاین یک کلون از سایتمون روی سیستممون درست کنیم.&lt;/p&gt;
+&lt;p&gt;ترمینال رو باز کنید و این دستور رو وارد کنید.&lt;/p&gt;
+&lt;div class="code-container" dir="ltr"&gt;&lt;div class="code-header"&gt;
+&lt;div class="file-info"&gt;
+&lt;svg class="file-icon" viewBox="0 0 24 24"&gt;
+&lt;path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"&gt;&lt;/path&gt;
+&lt;polyline points="13 2 13 9 20 9"&gt;&lt;/polyline&gt;
+&lt;/svg&gt;
+&lt;span class="filename"&gt;bash&lt;/span&gt;&lt;span class="language-badge"&gt;bash&lt;/span&gt;&lt;/div&gt;&lt;button class="copy-button" onclick="copyCode(this)"&gt;
+&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+copy
+&lt;/button&gt;&lt;/div&gt;&lt;div class="code-content"&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git clone https://github.com/username/username.github.io.git&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;script&gt;
+function copyCode(button) {
+const codeContent = button.closest('.code-container').querySelector('pre code');
+const text = codeContent.textContent;
+navigator.clipboard.writeText(text).then(() =&gt; {
+const originalText = button.innerHTML;
+button.innerHTML = '&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;&lt;polyline points="20 6 9 17 4 12"&gt;&lt;/polyline&gt;&lt;/svg&gt;کپی شد!';
+button.style.background = '#10b981';
+setTimeout(() =&gt; {
+button.innerHTML = originalText;
+button.style.background = '';
+}, 2000);
+});
+}
+&lt;/script&gt;
+&lt;style&gt;
+.code-container {
+margin: 2rem 0;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.code-header {
+background: #1e293b;
+color: #e2e8f0;
+padding: 0.8rem 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #334155;
+}
+.file-info {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+.file-icon {
+width: 18px;
+height: 18px;
+fill: #94a3b8;
+}
+.filename {
+font-weight: 500;
+}
+.language-badge {
+background: #475569;
+padding: 0.2rem 0.6rem;
+border-radius: 4px;
+font-size: 0.8rem;
+margin-left: 0.5rem;
+}
+.copy-button {
+background: #3b82f6;
+color: white;
+border: none;
+padding: 0.4rem 0.8rem;
+border-radius: 6px;
+cursor: pointer;
+font-family: inherit;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 0.3rem;
+transition: background 0.2s;
+}
+.copy-button:hover {
+background: #2563eb;
+}
+.copy-icon {
+width: 16px;
+height: 16px;
+fill: currentColor;
+}
+.code-content pre {
+margin: 0;
+border-radius: 0 0 10px 10px;
+}
+&lt;/style&gt;
+&lt;p&gt;نام کاربری خودتون رو به جای &lt;code&gt;username&lt;/code&gt; بذارید. فرض کنید قراره سایت منو کلون کنید:&lt;/p&gt;
+&lt;div class="code-container" dir="ltr"&gt;&lt;div class="code-header"&gt;
+&lt;div class="file-info"&gt;
+&lt;svg class="file-icon" viewBox="0 0 24 24"&gt;
+&lt;path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"&gt;&lt;/path&gt;
+&lt;polyline points="13 2 13 9 20 9"&gt;&lt;/polyline&gt;
+&lt;/svg&gt;
+&lt;span class="filename"&gt;bash&lt;/span&gt;&lt;span class="language-badge"&gt;bash&lt;/span&gt;&lt;/div&gt;&lt;button class="copy-button" onclick="copyCode(this)"&gt;
+&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+copy
+&lt;/button&gt;&lt;/div&gt;&lt;div class="code-content"&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git clone https://github.com/silvergit/silvergit.github.io.git&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;script&gt;
+function copyCode(button) {
+const codeContent = button.closest('.code-container').querySelector('pre code');
+const text = codeContent.textContent;
+navigator.clipboard.writeText(text).then(() =&gt; {
+const originalText = button.innerHTML;
+button.innerHTML = '&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;&lt;polyline points="20 6 9 17 4 12"&gt;&lt;/polyline&gt;&lt;/svg&gt;کپی شد!';
+button.style.background = '#10b981';
+setTimeout(() =&gt; {
+button.innerHTML = originalText;
+button.style.background = '';
+}, 2000);
+});
+}
+&lt;/script&gt;
+&lt;style&gt;
+.code-container {
+margin: 2rem 0;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.code-header {
+background: #1e293b;
+color: #e2e8f0;
+padding: 0.8rem 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #334155;
+}
+.file-info {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+.file-icon {
+width: 18px;
+height: 18px;
+fill: #94a3b8;
+}
+.filename {
+font-weight: 500;
+}
+.language-badge {
+background: #475569;
+padding: 0.2rem 0.6rem;
+border-radius: 4px;
+font-size: 0.8rem;
+margin-left: 0.5rem;
+}
+.copy-button {
+background: #3b82f6;
+color: white;
+border: none;
+padding: 0.4rem 0.8rem;
+border-radius: 6px;
+cursor: pointer;
+font-family: inherit;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 0.3rem;
+transition: background 0.2s;
+}
+.copy-button:hover {
+background: #2563eb;
+}
+.copy-icon {
+width: 16px;
+height: 16px;
+fill: currentColor;
+}
+.code-content pre {
+margin: 0;
+border-radius: 0 0 10px 10px;
+}
+&lt;/style&gt;
+&lt;p&gt;حالا به پوشه سایت برید:&lt;/p&gt;
+&lt;div class="code-container" dir="ltr"&gt;&lt;div class="code-header"&gt;
+&lt;div class="file-info"&gt;
+&lt;svg class="file-icon" viewBox="0 0 24 24"&gt;
+&lt;path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"&gt;&lt;/path&gt;
+&lt;polyline points="13 2 13 9 20 9"&gt;&lt;/polyline&gt;
+&lt;/svg&gt;
+&lt;span class="filename"&gt;bash&lt;/span&gt;&lt;span class="language-badge"&gt;bash&lt;/span&gt;&lt;/div&gt;&lt;button class="copy-button" onclick="copyCode(this)"&gt;
+&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+copy
+&lt;/button&gt;&lt;/div&gt;&lt;div class="code-content"&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; silvergit.github.io&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;script&gt;
+function copyCode(button) {
+const codeContent = button.closest('.code-container').querySelector('pre code');
+const text = codeContent.textContent;
+navigator.clipboard.writeText(text).then(() =&gt; {
+const originalText = button.innerHTML;
+button.innerHTML = '&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;&lt;polyline points="20 6 9 17 4 12"&gt;&lt;/polyline&gt;&lt;/svg&gt;کپی شد!';
+button.style.background = '#10b981';
+setTimeout(() =&gt; {
+button.innerHTML = originalText;
+button.style.background = '';
+}, 2000);
+});
+}
+&lt;/script&gt;
+&lt;style&gt;
+.code-container {
+margin: 2rem 0;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.code-header {
+background: #1e293b;
+color: #e2e8f0;
+padding: 0.8rem 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #334155;
+}
+.file-info {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+.file-icon {
+width: 18px;
+height: 18px;
+fill: #94a3b8;
+}
+.filename {
+font-weight: 500;
+}
+.language-badge {
+background: #475569;
+padding: 0.2rem 0.6rem;
+border-radius: 4px;
+font-size: 0.8rem;
+margin-left: 0.5rem;
+}
+.copy-button {
+background: #3b82f6;
+color: white;
+border: none;
+padding: 0.4rem 0.8rem;
+border-radius: 6px;
+cursor: pointer;
+font-family: inherit;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 0.3rem;
+transition: background 0.2s;
+}
+.copy-button:hover {
+background: #2563eb;
+}
+.copy-icon {
+width: 16px;
+height: 16px;
+fill: currentColor;
+}
+.code-content pre {
+margin: 0;
+border-radius: 0 0 10px 10px;
+}
+&lt;/style&gt;
+&lt;p&gt;و &lt;code&gt;Hugo&lt;/code&gt; رو اجرا کنید:&lt;/p&gt;
+&lt;div class="code-container" dir="ltr"&gt;&lt;div class="code-header"&gt;
+&lt;div class="file-info"&gt;
+&lt;svg class="file-icon" viewBox="0 0 24 24"&gt;
+&lt;path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"&gt;&lt;/path&gt;
+&lt;polyline points="13 2 13 9 20 9"&gt;&lt;/polyline&gt;
+&lt;/svg&gt;
+&lt;span class="filename"&gt;bash&lt;/span&gt;&lt;span class="language-badge"&gt;bash&lt;/span&gt;&lt;/div&gt;&lt;button class="copy-button" onclick="copyCode(this)"&gt;
+&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+copy
+&lt;/button&gt;&lt;/div&gt;&lt;div class="code-content"&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Hugo server -D&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;script&gt;
+function copyCode(button) {
+const codeContent = button.closest('.code-container').querySelector('pre code');
+const text = codeContent.textContent;
+navigator.clipboard.writeText(text).then(() =&gt; {
+const originalText = button.innerHTML;
+button.innerHTML = '&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;&lt;polyline points="20 6 9 17 4 12"&gt;&lt;/polyline&gt;&lt;/svg&gt;کپی شد!';
+button.style.background = '#10b981';
+setTimeout(() =&gt; {
+button.innerHTML = originalText;
+button.style.background = '';
+}, 2000);
+});
+}
+&lt;/script&gt;
+&lt;style&gt;
+.code-container {
+margin: 2rem 0;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.code-header {
+background: #1e293b;
+color: #e2e8f0;
+padding: 0.8rem 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #334155;
+}
+.file-info {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+.file-icon {
+width: 18px;
+height: 18px;
+fill: #94a3b8;
+}
+.filename {
+font-weight: 500;
+}
+.language-badge {
+background: #475569;
+padding: 0.2rem 0.6rem;
+border-radius: 4px;
+font-size: 0.8rem;
+margin-left: 0.5rem;
+}
+.copy-button {
+background: #3b82f6;
+color: white;
+border: none;
+padding: 0.4rem 0.8rem;
+border-radius: 6px;
+cursor: pointer;
+font-family: inherit;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 0.3rem;
+transition: background 0.2s;
+}
+.copy-button:hover {
+background: #2563eb;
+}
+.copy-icon {
+width: 16px;
+height: 16px;
+fill: currentColor;
+}
+.code-content pre {
+margin: 0;
+border-radius: 0 0 10px 10px;
+}
+&lt;/style&gt;
+&lt;p&gt;خروجی لینکی رو به شما می‌ده که میتونید خروجی سایتتون به صورت لوکال یا محلی رو توی اون آدرس ببینید&lt;/p&gt;
+&lt;div class="code-container" dir="ltr"&gt;&lt;div class="code-header"&gt;
+&lt;div class="file-info"&gt;
+&lt;svg class="file-icon" viewBox="0 0 24 24"&gt;
+&lt;path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"&gt;&lt;/path&gt;
+&lt;polyline points="13 2 13 9 20 9"&gt;&lt;/polyline&gt;
+&lt;/svg&gt;
+&lt;span class="filename"&gt;bash&lt;/span&gt;&lt;span class="language-badge"&gt;bash&lt;/span&gt;&lt;/div&gt;&lt;button class="copy-button" onclick="copyCode(this)"&gt;
+&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+copy
+&lt;/button&gt;&lt;/div&gt;&lt;div class="code-content"&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Built in &lt;span class="m"&gt;133&lt;/span&gt; ms
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Environment: &lt;span class="s2"&gt;&amp;#34;development&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Serving pages from disk
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Web Server is available at http://localhost:1313/ &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;bind&lt;/span&gt; address 127.0.0.1&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Press Ctrl+C to stop&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;script&gt;
+function copyCode(button) {
+const codeContent = button.closest('.code-container').querySelector('pre code');
+const text = codeContent.textContent;
+navigator.clipboard.writeText(text).then(() =&gt; {
+const originalText = button.innerHTML;
+button.innerHTML = '&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;&lt;polyline points="20 6 9 17 4 12"&gt;&lt;/polyline&gt;&lt;/svg&gt;کپی شد!';
+button.style.background = '#10b981';
+setTimeout(() =&gt; {
+button.innerHTML = originalText;
+button.style.background = '';
+}, 2000);
+});
+}
+&lt;/script&gt;
+&lt;style&gt;
+.code-container {
+margin: 2rem 0;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.code-header {
+background: #1e293b;
+color: #e2e8f0;
+padding: 0.8rem 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #334155;
+}
+.file-info {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+.file-icon {
+width: 18px;
+height: 18px;
+fill: #94a3b8;
+}
+.filename {
+font-weight: 500;
+}
+.language-badge {
+background: #475569;
+padding: 0.2rem 0.6rem;
+border-radius: 4px;
+font-size: 0.8rem;
+margin-left: 0.5rem;
+}
+.copy-button {
+background: #3b82f6;
+color: white;
+border: none;
+padding: 0.4rem 0.8rem;
+border-radius: 6px;
+cursor: pointer;
+font-family: inherit;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 0.3rem;
+transition: background 0.2s;
+}
+.copy-button:hover {
+background: #2563eb;
+}
+.copy-icon {
+width: 16px;
+height: 16px;
+fill: currentColor;
+}
+.code-content pre {
+margin: 0;
+border-radius: 0 0 10px 10px;
+}
+&lt;/style&gt;
+&lt;p&gt;برای من اینه: &lt;code&gt;http://localhost:1313/&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="۵-اولین-پست-سایت"&gt;۵. اولین پست سایت
+&lt;/h3&gt;&lt;p&gt;بریم سراغ ساخت یه صفحه جدید. برای این کار این دستور رو وارد کنید:&lt;/p&gt;
+&lt;p&gt;&lt;div class="code-container" dir="ltr"&gt;&lt;div class="code-content"&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo new content posts/hello.md&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;script&gt;
+function copyCode(button) {
+const codeContent = button.closest('.code-container').querySelector('pre code');
+const text = codeContent.textContent;
+navigator.clipboard.writeText(text).then(() =&gt; {
+const originalText = button.innerHTML;
+button.innerHTML = '&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;&lt;polyline points="20 6 9 17 4 12"&gt;&lt;/polyline&gt;&lt;/svg&gt;کپی شد!';
+button.style.background = '#10b981';
+setTimeout(() =&gt; {
+button.innerHTML = originalText;
+button.style.background = '';
+}, 2000);
+});
+}
+&lt;/script&gt;
+&lt;style&gt;
+.code-container {
+margin: 2rem 0;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.code-header {
+background: #1e293b;
+color: #e2e8f0;
+padding: 0.8rem 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #334155;
+}
+.file-info {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+.file-icon {
+width: 18px;
+height: 18px;
+fill: #94a3b8;
+}
+.filename {
+font-weight: 500;
+}
+.language-badge {
+background: #475569;
+padding: 0.2rem 0.6rem;
+border-radius: 4px;
+font-size: 0.8rem;
+margin-left: 0.5rem;
+}
+.copy-button {
+background: #3b82f6;
+color: white;
+border: none;
+padding: 0.4rem 0.8rem;
+border-radius: 6px;
+cursor: pointer;
+font-family: inherit;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 0.3rem;
+transition: background 0.2s;
+}
+.copy-button:hover {
+background: #2563eb;
+}
+.copy-icon {
+width: 16px;
+height: 16px;
+fill: currentColor;
+}
+.code-content pre {
+margin: 0;
+border-radius: 0 0 10px 10px;
+}
+&lt;/style&gt;
+در پوشه &lt;code&gt;content&lt;/code&gt; یک فایل مارک داون جدید براتون ساخته می‌شه.&lt;/p&gt;
+&lt;div class="alert alert-green"&gt;
+&lt;div class="alert-header" style="color: var(--color-green);"&gt;
+&lt;i class="ti ti-info-circle"&gt;&lt;/i&gt;
+&lt;span&gt;نکته&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="alert-content"&gt;
+از یک ویرایشگر برای نوشتن فایل‌های &lt;code&gt;markdown&lt;/code&gt; مثل &lt;code&gt;vscode&lt;/code&gt; استفاده کنید.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;این متن را در فایل کپی کنید:&lt;/p&gt;
+&lt;div class="code-container" dir="ltr"&gt;&lt;div class="code-header"&gt;
+&lt;div class="file-info"&gt;
+&lt;svg class="file-icon" viewBox="0 0 24 24"&gt;
+&lt;path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"&gt;&lt;/path&gt;
+&lt;polyline points="13 2 13 9 20 9"&gt;&lt;/polyline&gt;
+&lt;/svg&gt;
+&lt;span class="filename"&gt;hello.md&lt;/span&gt;&lt;span class="language-badge"&gt;markdown&lt;/span&gt;&lt;/div&gt;&lt;button class="copy-button" onclick="copyCode(this)"&gt;
+&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+copy
+&lt;/button&gt;&lt;/div&gt;&lt;div class="code-content"&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;title: &amp;#34;سلام دنیا&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;description: &amp;#34;اولین پست سایت&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;date: 2025-12-12T12:53:03+03:30
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;image:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;math:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;license:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hidden: false
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;comments: true
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;draft: false
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;categories: [&amp;#34;عمومی&amp;#34;]
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;tags: []
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;این اولین پست من توی این سایته.&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;script&gt;
+function copyCode(button) {
+const codeContent = button.closest('.code-container').querySelector('pre code');
+const text = codeContent.textContent;
+navigator.clipboard.writeText(text).then(() =&gt; {
+const originalText = button.innerHTML;
+button.innerHTML = '&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;&lt;polyline points="20 6 9 17 4 12"&gt;&lt;/polyline&gt;&lt;/svg&gt;کپی شد!';
+button.style.background = '#10b981';
+setTimeout(() =&gt; {
+button.innerHTML = originalText;
+button.style.background = '';
+}, 2000);
+});
+}
+&lt;/script&gt;
+&lt;style&gt;
+.code-container {
+margin: 2rem 0;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.code-header {
+background: #1e293b;
+color: #e2e8f0;
+padding: 0.8rem 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #334155;
+}
+.file-info {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+.file-icon {
+width: 18px;
+height: 18px;
+fill: #94a3b8;
+}
+.filename {
+font-weight: 500;
+}
+.language-badge {
+background: #475569;
+padding: 0.2rem 0.6rem;
+border-radius: 4px;
+font-size: 0.8rem;
+margin-left: 0.5rem;
+}
+.copy-button {
+background: #3b82f6;
+color: white;
+border: none;
+padding: 0.4rem 0.8rem;
+border-radius: 6px;
+cursor: pointer;
+font-family: inherit;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 0.3rem;
+transition: background 0.2s;
+}
+.copy-button:hover {
+background: #2563eb;
+}
+.copy-icon {
+width: 16px;
+height: 16px;
+fill: currentColor;
+}
+.code-content pre {
+margin: 0;
+border-radius: 0 0 10px 10px;
+}
+&lt;/style&gt;
+&lt;p&gt;قسمت بالای فایل رو &lt;code&gt;Hugo&lt;/code&gt; میخونه و تصمیم می‌گیره که با فایل چی‌کار کنه. مثلا تاریخ ساخت فایل کی بوده یا عنوان صفحه چیه و یا اینکه برای این صفحه چه تگ‌هایی رو باید معرفی کنه.&lt;/p&gt;
+&lt;p&gt;خط آخر هم همون چیزیه که قراره توی پست اولتون ببینید. فایل رو ببنددید و دوباره &lt;code&gt;Hugo&lt;/code&gt; رو اجرا کنید.&lt;/p&gt;
+&lt;div class="code-container" dir="ltr"&gt;&lt;div class="code-content"&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo server -D&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;script&gt;
+function copyCode(button) {
+const codeContent = button.closest('.code-container').querySelector('pre code');
+const text = codeContent.textContent;
+navigator.clipboard.writeText(text).then(() =&gt; {
+const originalText = button.innerHTML;
+button.innerHTML = '&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;&lt;polyline points="20 6 9 17 4 12"&gt;&lt;/polyline&gt;&lt;/svg&gt;کپی شد!';
+button.style.background = '#10b981';
+setTimeout(() =&gt; {
+button.innerHTML = originalText;
+button.style.background = '';
+}, 2000);
+});
+}
+&lt;/script&gt;
+&lt;style&gt;
+.code-container {
+margin: 2rem 0;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.code-header {
+background: #1e293b;
+color: #e2e8f0;
+padding: 0.8rem 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #334155;
+}
+.file-info {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+.file-icon {
+width: 18px;
+height: 18px;
+fill: #94a3b8;
+}
+.filename {
+font-weight: 500;
+}
+.language-badge {
+background: #475569;
+padding: 0.2rem 0.6rem;
+border-radius: 4px;
+font-size: 0.8rem;
+margin-left: 0.5rem;
+}
+.copy-button {
+background: #3b82f6;
+color: white;
+border: none;
+padding: 0.4rem 0.8rem;
+border-radius: 6px;
+cursor: pointer;
+font-family: inherit;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 0.3rem;
+transition: background 0.2s;
+}
+.copy-button:hover {
+background: #2563eb;
+}
+.copy-icon {
+width: 16px;
+height: 16px;
+fill: currentColor;
+}
+.code-content pre {
+margin: 0;
+border-radius: 0 0 10px 10px;
+}
+&lt;/style&gt;
+&lt;h3 id="۶-پیکربندی-فایل-configtoml"&gt;۶. پیکربندی فایل &lt;code&gt;config.toml&lt;/code&gt;
+&lt;/h3&gt;&lt;p&gt;فایل پیکربندی معمولا در ریشه پروژه وجود داره اما بعضی وقت‌ها هم توی پوشه &lt;code&gt;config&lt;/code&gt; یا &lt;code&gt;config/_default&lt;/code&gt; می‌تونید پیداش کنید.&lt;/p&gt;
+&lt;p&gt;یه نمونه ساده از کانفیگ رو میتونید ببینید:
+&lt;div class="code-container" dir="ltr"&gt;&lt;div class="code-header"&gt;
+&lt;div class="file-info"&gt;
+&lt;svg class="file-icon" viewBox="0 0 24 24"&gt;
+&lt;path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"&gt;&lt;/path&gt;
+&lt;polyline points="13 2 13 9 20 9"&gt;&lt;/polyline&gt;
+&lt;/svg&gt;
+&lt;span class="filename"&gt;config.toml&lt;/span&gt;&lt;span class="language-badge"&gt;toml&lt;/span&gt;&lt;/div&gt;&lt;button class="copy-button" onclick="copyCode(this)"&gt;
+&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+copy
+&lt;/button&gt;&lt;/div&gt;&lt;div class="code-content"&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;baseURL&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;https://username.github.io/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;languageCode&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;fa-ir&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;title&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;عنوان سایت شما&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;theme&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;ananke&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;params&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;description&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;توضیحات سایت شما&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;script&gt;
+function copyCode(button) {
+const codeContent = button.closest('.code-container').querySelector('pre code');
+const text = codeContent.textContent;
+navigator.clipboard.writeText(text).then(() =&gt; {
+const originalText = button.innerHTML;
+button.innerHTML = '&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;&lt;polyline points="20 6 9 17 4 12"&gt;&lt;/polyline&gt;&lt;/svg&gt;کپی شد!';
+button.style.background = '#10b981';
+setTimeout(() =&gt; {
+button.innerHTML = originalText;
+button.style.background = '';
+}, 2000);
+});
+}
+&lt;/script&gt;
+&lt;style&gt;
+.code-container {
+margin: 2rem 0;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.code-header {
+background: #1e293b;
+color: #e2e8f0;
+padding: 0.8rem 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #334155;
+}
+.file-info {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+.file-icon {
+width: 18px;
+height: 18px;
+fill: #94a3b8;
+}
+.filename {
+font-weight: 500;
+}
+.language-badge {
+background: #475569;
+padding: 0.2rem 0.6rem;
+border-radius: 4px;
+font-size: 0.8rem;
+margin-left: 0.5rem;
+}
+.copy-button {
+background: #3b82f6;
+color: white;
+border: none;
+padding: 0.4rem 0.8rem;
+border-radius: 6px;
+cursor: pointer;
+font-family: inherit;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 0.3rem;
+transition: background 0.2s;
+}
+.copy-button:hover {
+background: #2563eb;
+}
+.copy-icon {
+width: 16px;
+height: 16px;
+fill: currentColor;
+}
+.code-content pre {
+margin: 0;
+border-radius: 0 0 10px 10px;
+}
+&lt;/style&gt;&lt;/p&gt;
+&lt;p&gt;کانفیگ من این شکلیه:
+&lt;div class="code-container" dir="ltr"&gt;&lt;div class="code-header"&gt;
+&lt;div class="file-info"&gt;
+&lt;svg class="file-icon" viewBox="0 0 24 24"&gt;
+&lt;path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"&gt;&lt;/path&gt;
+&lt;polyline points="13 2 13 9 20 9"&gt;&lt;/polyline&gt;
+&lt;/svg&gt;
+&lt;span class="filename"&gt;config.toml&lt;/span&gt;&lt;span class="language-badge"&gt;toml&lt;/span&gt;&lt;/div&gt;&lt;button class="copy-button" onclick="copyCode(this)"&gt;
+&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+copy
+&lt;/button&gt;&lt;/div&gt;&lt;div class="code-content"&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# Change baseurl before deploy&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;baseurl&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;https://silvergit.github.io/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;languageCode&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;en-us&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;title&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Morface&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# Theme i18n support&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# Available values: en, fr, id, ja, ko, pt-br, zh-cn, zh-tw, es, de, nl, it, th, el, uk, ar&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;defaultContentLanguage&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;fa&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# This will make .Summary and .WordCount behave correctly for CJK languages.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;hasCJKLanguage&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# Change it to your Disqus shortname before using&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;disqusShortname&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;hugo-theme-stack&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;pagination&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;pagerSize&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;script&gt;
+function copyCode(button) {
+const codeContent = button.closest('.code-container').querySelector('pre code');
+const text = codeContent.textContent;
+navigator.clipboard.writeText(text).then(() =&gt; {
+const originalText = button.innerHTML;
+button.innerHTML = '&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;&lt;polyline points="20 6 9 17 4 12"&gt;&lt;/polyline&gt;&lt;/svg&gt;کپی شد!';
+button.style.background = '#10b981';
+setTimeout(() =&gt; {
+button.innerHTML = originalText;
+button.style.background = '';
+}, 2000);
+});
+}
+&lt;/script&gt;
+&lt;style&gt;
+.code-container {
+margin: 2rem 0;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.code-header {
+background: #1e293b;
+color: #e2e8f0;
+padding: 0.8rem 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #334155;
+}
+.file-info {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+.file-icon {
+width: 18px;
+height: 18px;
+fill: #94a3b8;
+}
+.filename {
+font-weight: 500;
+}
+.language-badge {
+background: #475569;
+padding: 0.2rem 0.6rem;
+border-radius: 4px;
+font-size: 0.8rem;
+margin-left: 0.5rem;
+}
+.copy-button {
+background: #3b82f6;
+color: white;
+border: none;
+padding: 0.4rem 0.8rem;
+border-radius: 6px;
+cursor: pointer;
+font-family: inherit;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 0.3rem;
+transition: background 0.2s;
+}
+.copy-button:hover {
+background: #2563eb;
+}
+.copy-icon {
+width: 16px;
+height: 16px;
+fill: currentColor;
+}
+.code-content pre {
+margin: 0;
+border-radius: 0 0 10px 10px;
+}
+&lt;/style&gt;&lt;/p&gt;
+&lt;p&gt;کل کانفیگ سایت من توی فایل‌های جداگانه ساخته می‌شه:
+&lt;div class="code-container" dir="ltr"&gt;&lt;div class="code-content"&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;config
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└── _default
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ├── config.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ├── languages.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ├── markup.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ├── menu.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ├── module.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ├── params.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ├── permalinks.toml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; └── related.toml&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;script&gt;
+function copyCode(button) {
+const codeContent = button.closest('.code-container').querySelector('pre code');
+const text = codeContent.textContent;
+navigator.clipboard.writeText(text).then(() =&gt; {
+const originalText = button.innerHTML;
+button.innerHTML = '&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;&lt;polyline points="20 6 9 17 4 12"&gt;&lt;/polyline&gt;&lt;/svg&gt;کپی شد!';
+button.style.background = '#10b981';
+setTimeout(() =&gt; {
+button.innerHTML = originalText;
+button.style.background = '';
+}, 2000);
+});
+}
+&lt;/script&gt;
+&lt;style&gt;
+.code-container {
+margin: 2rem 0;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.code-header {
+background: #1e293b;
+color: #e2e8f0;
+padding: 0.8rem 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #334155;
+}
+.file-info {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+.file-icon {
+width: 18px;
+height: 18px;
+fill: #94a3b8;
+}
+.filename {
+font-weight: 500;
+}
+.language-badge {
+background: #475569;
+padding: 0.2rem 0.6rem;
+border-radius: 4px;
+font-size: 0.8rem;
+margin-left: 0.5rem;
+}
+.copy-button {
+background: #3b82f6;
+color: white;
+border: none;
+padding: 0.4rem 0.8rem;
+border-radius: 6px;
+cursor: pointer;
+font-family: inherit;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 0.3rem;
+transition: background 0.2s;
+}
+.copy-button:hover {
+background: #2563eb;
+}
+.copy-icon {
+width: 16px;
+height: 16px;
+fill: currentColor;
+}
+.code-content pre {
+margin: 0;
+border-radius: 0 0 10px 10px;
+}
+&lt;/style&gt;&lt;/p&gt;
+&lt;div class="alert alert-green"&gt;
+&lt;div class="alert-header" style="color: var(--color-green);"&gt;
+&lt;i class="ti ti-info-circle"&gt;&lt;/i&gt;
+&lt;span&gt;نکته&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="alert-content"&gt;
+شما میتونید فقط از یک فایل استفاده کنید و تمام این تنظیمات رو فقط در فایل &lt;code&gt;config.toml&lt;/code&gt; کپی کنید.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;برای دو زبانه‌کردن سایت من از فایل &lt;code&gt;languages.toml&lt;/code&gt; استفاده میکنم:
+&lt;div class="code-container" dir="ltr"&gt;&lt;div class="code-header"&gt;
+&lt;div class="file-info"&gt;
+&lt;svg class="file-icon" viewBox="0 0 24 24"&gt;
+&lt;path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"&gt;&lt;/path&gt;
+&lt;polyline points="13 2 13 9 20 9"&gt;&lt;/polyline&gt;
+&lt;/svg&gt;
+&lt;span class="filename"&gt;languages.toml&lt;/span&gt;&lt;span class="language-badge"&gt;toml&lt;/span&gt;&lt;/div&gt;&lt;button class="copy-button" onclick="copyCode(this)"&gt;
+&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+copy
+&lt;/button&gt;&lt;/div&gt;&lt;div class="code-content"&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;fa&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;languageName&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;فارسی&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;languagedirection&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;rtl&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;title&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;مورفیس&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;weight&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;en&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;languageName&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;English&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;languagedirection&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;ltr&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;title&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;morface&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;weight&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;script&gt;
+function copyCode(button) {
+const codeContent = button.closest('.code-container').querySelector('pre code');
+const text = codeContent.textContent;
+navigator.clipboard.writeText(text).then(() =&gt; {
+const originalText = button.innerHTML;
+button.innerHTML = '&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;&lt;polyline points="20 6 9 17 4 12"&gt;&lt;/polyline&gt;&lt;/svg&gt;کپی شد!';
+button.style.background = '#10b981';
+setTimeout(() =&gt; {
+button.innerHTML = originalText;
+button.style.background = '';
+}, 2000);
+});
+}
+&lt;/script&gt;
+&lt;style&gt;
+.code-container {
+margin: 2rem 0;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.code-header {
+background: #1e293b;
+color: #e2e8f0;
+padding: 0.8rem 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #334155;
+}
+.file-info {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+.file-icon {
+width: 18px;
+height: 18px;
+fill: #94a3b8;
+}
+.filename {
+font-weight: 500;
+}
+.language-badge {
+background: #475569;
+padding: 0.2rem 0.6rem;
+border-radius: 4px;
+font-size: 0.8rem;
+margin-left: 0.5rem;
+}
+.copy-button {
+background: #3b82f6;
+color: white;
+border: none;
+padding: 0.4rem 0.8rem;
+border-radius: 6px;
+cursor: pointer;
+font-family: inherit;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 0.3rem;
+transition: background 0.2s;
+}
+.copy-button:hover {
+background: #2563eb;
+}
+.copy-icon {
+width: 16px;
+height: 16px;
+fill: currentColor;
+}
+.code-content pre {
+margin: 0;
+border-radius: 0 0 10px 10px;
+}
+&lt;/style&gt;&lt;/p&gt;
+&lt;h3 id="۷-آپلود-تغییرات-روی-گیتهاب"&gt;۷. آپلود تغییرات روی گیت‌هاب
+&lt;/h3&gt;&lt;div class="code-container" dir="ltr"&gt;&lt;div class="code-content"&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; public
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git init
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git add .
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git commit -m &lt;span class="s2"&gt;&amp;#34;اولین انتشار&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git branch -M main
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git remote add origin https://github.com/username/username.github.io.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git push -u origin main&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;script&gt;
+function copyCode(button) {
+const codeContent = button.closest('.code-container').querySelector('pre code');
+const text = codeContent.textContent;
+navigator.clipboard.writeText(text).then(() =&gt; {
+const originalText = button.innerHTML;
+button.innerHTML = '&lt;svg class="copy-icon" viewBox="0 0 24 24"&gt;&lt;polyline points="20 6 9 17 4 12"&gt;&lt;/polyline&gt;&lt;/svg&gt;کپی شد!';
+button.style.background = '#10b981';
+setTimeout(() =&gt; {
+button.innerHTML = originalText;
+button.style.background = '';
+}, 2000);
+});
+}
+&lt;/script&gt;
+&lt;style&gt;
+.code-container {
+margin: 2rem 0;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.code-header {
+background: #1e293b;
+color: #e2e8f0;
+padding: 0.8rem 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #334155;
+}
+.file-info {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+.file-icon {
+width: 18px;
+height: 18px;
+fill: #94a3b8;
+}
+.filename {
+font-weight: 500;
+}
+.language-badge {
+background: #475569;
+padding: 0.2rem 0.6rem;
+border-radius: 4px;
+font-size: 0.8rem;
+margin-left: 0.5rem;
+}
+.copy-button {
+background: #3b82f6;
+color: white;
+border: none;
+padding: 0.4rem 0.8rem;
+border-radius: 6px;
+cursor: pointer;
+font-family: inherit;
+font-size: 0.9rem;
+display: flex;
+align-items: center;
+gap: 0.3rem;
+transition: background 0.2s;
+}
+.copy-button:hover {
+background: #2563eb;
+}
+.copy-icon {
+width: 16px;
+height: 16px;
+fill: currentColor;
+}
+.code-content pre {
+margin: 0;
+border-radius: 0 0 10px 10px;
+}
+&lt;/style&gt;
+&lt;h2 id="نکات-مهم"&gt;نکات مهم
+&lt;/h2&gt;&lt;h3 id="دامنه-سفارشی"&gt;دامنه سفارشی
+&lt;/h3&gt;&lt;p&gt;اگر می‌خواهید از دامنه شخصی استفاده کنید:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;فایل &lt;code&gt;CNAME&lt;/code&gt; را در پوشه &lt;code&gt;static&lt;/code&gt; ایجاد کنید&lt;/li&gt;
+&lt;li&gt;نام دامنه خود را در آن وارد کنید&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DNS&lt;/code&gt; خود را مطابق راهنمای &lt;code&gt;GitHub Pages&lt;/code&gt; تنظیم کنید&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="بهینهسازی-برای-موتورهای-جستجو"&gt;بهینه‌سازی برای موتورهای جستجو
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;از قالب‌های &lt;code&gt;SEO-Friendly&lt;/code&gt; استفاده کنید&lt;/li&gt;
+&lt;li&gt;متا تگ‌ها را به درستی تنظیم کنید&lt;/li&gt;
+&lt;li&gt;ساختار &lt;code&gt;URL&lt;/code&gt; را خوانا انتخاب کنید&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="پشتیبانی-از-زبان-فارسی"&gt;پشتیبانی از زبان فارسی
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;در &lt;code&gt;config.toml&lt;/code&gt; مقدار &lt;code&gt;languageCode&lt;/code&gt; را &lt;code&gt;fa-ir&lt;/code&gt; تنظیم کنید&lt;/li&gt;
+&lt;li&gt;از قالب‌هایی با پشتیبانی &lt;code&gt;RTL&lt;/code&gt; استفاده کنید&lt;/li&gt;
+&lt;li&gt;فونت‌های فارسی مناسب اضافه کنید&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="منابع-مفید"&gt;منابع مفید
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://gohugo.io/documentation/" target="_blank" rel="noopener"
+&gt;مستندات رسمی Hugo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://docs.github.com/pages" target="_blank" rel="noopener"
+&gt;راهنمای GitHub Pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://themes.gohugo.io/" target="_blank" rel="noopener"
+&gt;گالری قالب‌های Hugo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://www.markdownguide.org/" target="_blank" rel="noopener"
+&gt;راهنمای Markdown&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="نتیجهگیری"&gt;نتیجه‌گیری
+&lt;/h2&gt;&lt;p&gt;با استفاده از &lt;code&gt;Hugo&lt;/code&gt; و &lt;code&gt;GitHub Pages&lt;/code&gt; می‌توانید در کمترین زمان و بدون هزینه، یک سایت استاتیک حرفه‌ای راه‌اندازی کنید. این روش برای وبلاگ‌نویسان، توسعه‌دهندگان و کسب‌وکارهای کوچک ایده‌آل است.&lt;/p&gt;</description></item></channel></rss>
